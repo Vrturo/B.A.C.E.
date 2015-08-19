@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/application.css">
+  <title>Passion Project</title>
+</head>
+<body>
+  <nav>
+    <div class="logo">
+    <a href="/">Passion Project</a>
+    </div>
+    <ul>
+      <% if session[:user_id] == nil %>
+        <li><a href="users/sessions/new">Sign In</a></li>
+        <li><a href="/users/new">Sign Up</a></li>
+      <% else %>
+        <li> <a href="users/sessions/logout">Log Out</a></li>
+       <% end %>
+    </ul>
+  </nav>
+  <div class="banner">
+  </div>
+
+ <%= yield %>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="/js/application.js"></script>
+
+</body>
+</html>
