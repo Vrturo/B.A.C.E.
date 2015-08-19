@@ -4,7 +4,6 @@ $( document ).ready(function() {
   });
 });
 
-
 // termsAndConditions = function() {
 //   if ($('#agree').is(':checked')) {
 //     $(this).submit();

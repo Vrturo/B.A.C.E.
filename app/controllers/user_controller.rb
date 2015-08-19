@@ -13,8 +13,7 @@ post '/users' do
     password: params[:password]
     )
   if @user.save
-    session[:user_id] = @user.id
-    redirect "/"
+    set_session_n_redirect_home(@user)
   else
     flash[:message] = "Invalid Sign Up Combination. Try again"
     redirect '/users/new'
@@ -28,8 +27,7 @@ end
 post '/users/sessions' do
   user = User.find_by(email: params[:email])
     if user.email && user.password_hash == params[:password]
-      session[:user_id] = user.id
-      redirect to '/'
+      set_session_n_redirect_home(user)
     else
       status 406
       flash[:message] = "Invalid Sign In Combination. Try again"
@@ -38,7 +36,6 @@ post '/users/sessions' do
 end
 
 get '/users/sessions/logout' do
-  session[:user_id] = nil
-  redirect '/'
+  session_logout_and_redirect
 end
 
