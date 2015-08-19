@@ -12,7 +12,7 @@ post '/users' do
   @user = User.new(
     name: params[:name],
     email: params[:email],
-    password_hash: params[:password]
+    password: params[:password]
     )
   if @user.save
     session[:user_id] = @user.id
@@ -34,7 +34,7 @@ post '/users/sessions' do
       status 406
       flash[:sign_in_warning] = "Wrong E mail"
       redirect to '/sessions/new'
-    elsif user.password_hash == params[:password]
+    elsif user.password == params[:password]
       session[:user_id] = user.id
       redirect to '/'
     else
