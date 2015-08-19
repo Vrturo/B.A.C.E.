@@ -34,7 +34,7 @@ post '/users/sessions' do
       status 406
       flash[:sign_in_warning] = "Wrong E mail"
       redirect to '/sessions/new'
-    elsif user.password == params[:password]
+    elsif user.password_hash == params[:password]
       session[:user_id] = user.id
       redirect to '/'
     else

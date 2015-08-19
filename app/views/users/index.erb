@@ -1,1 +1,20 @@
-Welcome
+<%if session[:user_id] == nil  %>
+  Welcome
+<%else  %>
+  <form method="post" action="/">
+    <label>How many drinks have you had?</label>
+      <input placeholder="2.. many" type="integer">
+    <label>How much do you weigh?</label>
+      <input placeholder="lbs" type="integer">
+    <label>How long since your first drink?</label>
+      <input placeholder="Amount of hours" type="integer">
+    <label>Gender?</label>
+    <select>
+      <option value="">Gender</option>
+      <option value="1">Male</option>
+      <option value="0">Female</option>
+    </select>
+    <br>
+    <button value="submit">Submit</button>
+  </form>
+<% end %>
