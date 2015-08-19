@@ -1,10 +1,8 @@
-get '/' do
-
+get '/' do.
 erb :'/users/index'
 end
 
 get '/users/new' do
-
 erb :'/users/new'
 end
 
@@ -18,34 +16,29 @@ post '/users' do
     session[:user_id] = @user.id
     redirect "/"
   else
-    "Invalid Sign Up Combination. Try again"
+    flash[:message] = "Invalid Sign Up Combination. Try again"
     redirect '/users/new'
   end
 end
 
 get '/users/sessions/new' do
-
   erb :'/users/session'
 end
 
 post '/users/sessions' do
   user = User.find_by(email: params[:email])
-    if user == nil
-      status 406
-      flash[:sign_in_warning] = "Wrong E mail"
-      redirect to '/sessions/new'
-    elsif user.password_hash == params[:password]
+    if user.email && user.password_hash == params[:password]
       session[:user_id] = user.id
       redirect to '/'
     else
       status 406
+      flash[:message] = "Invalid Sign In Combination. Try again"
       redirect to '/sessions/new'
   end
 end
 
 get '/users/sessions/logout' do
   session[:user_id] = nil
-
   redirect '/'
 end
 
