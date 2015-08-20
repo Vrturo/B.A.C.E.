@@ -37,6 +37,7 @@ how many drinks you have had
 
 Solution 1 ----------------
 male = weight/2.2 * .58
+56.68
 drinks/weight - time
 
 female = weight/2.2 * .?

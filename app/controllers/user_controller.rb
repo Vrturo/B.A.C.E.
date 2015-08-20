@@ -1,4 +1,4 @@
-get '/' do.
+get '/' do
 erb :'/users/index'
 end
 
@@ -38,4 +38,32 @@ end
 get '/users/sessions/logout' do
   session_logout_and_redirect
 end
+
+get '/users/calculate' do
+  erb :"/users/calculate"
+end
+
+post '/users/calculate' do
+  drinks = params[:drinks]
+  weight = params[:weight]
+  time = params[:time]
+
+  # @hours_drank = time * 0.015
+  # @volume = weight/2.2 * 0.58
+  # @bac = drinks/@volume - @hours_drank
+
+  # multiply(time, 0.015)
+  ratio = divide(weight.to_i, 2.2)
+  volume = multiply(ratio.to_i, 0.58)
+  @bac = divide(drinks.to_i, volume.to_i)
+  p @bac
+  redirect to '/users/calculate'
+end
+
+
+
+
+
+
+
 
