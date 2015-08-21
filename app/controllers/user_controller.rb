@@ -52,12 +52,13 @@ post '/users/calculate' do
   # @volume = weight/2.2 * 0.58
   # @bac = drinks/@volume - @hours_drank
 
-  # multiply(time, 0.015)
-  ratio = divide(weight.to_i, 2.2)
-  volume = multiply(ratio.to_i, 0.58)
-  @bac = divide(drinks.to_i, volume.to_i)
-  p @bac
-  redirect to '/users/calculate'
+  ratio = divide(weight.to_f, 2.2)
+  volume = multiply(ratio.to_f, 0.58)
+  bac = divide(drinks.to_f, volume.to_f)
+  p bac_dropped = multiply(time.to_f, 0.015)
+  p final_bac_integer = subtract(bac.to_f, bac_dropped.to_f)
+  @blood_alcohol_content = final_bac_integer.to_f.round(3)
+  erb :'/users/calculate'
 end
 
 
