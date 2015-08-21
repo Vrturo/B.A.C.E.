@@ -1,6 +1,8 @@
 <%if session[:user_id] == nil  %>
   Welcome
 <%else  %>
+
+  <h3>1 drink = 12oz. 5% beer, 1.25 oz. 40% liquor, 5oz. 12% wine</h3>
   <form method="post" action="/users/calculate">
     <label>How many drinks have you had?</label>
       <input placeholder="2.. many" type="number" step="any" name="drinks"><br>
@@ -8,17 +10,17 @@
       <input placeholder="lbs" type="number" step="any" name="weight"><br>
     <label>How long since your first drink?</label>
       <input placeholder="Amount of hours" type="number" step="any" name="time"><br>
-<!--     <label>Gender?</label>
-    <select>
-      <option value="">Gender</option>
-      <option value="1">Male</option>
-      <option value="0">Female</option>
+     <label>Gender?</label>
+    <select name ="gender">
+      <option value="gender">Gender</option>
+      <option value="male">Male</option>
+      <option value="female">Female</option>
     </select>
     <br>
   <input type="checkbox" id="agree" />
   <label>
     I agree with the <a id="terms" href="/terms-and-conditions">terms and conditions</a>.
-  </label> -->
+  </label>
     <button value="submit">Submit</button>
   </form>
 <% end %>
