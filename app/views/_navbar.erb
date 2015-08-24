@@ -1,13 +1,21 @@
-<nav>
-    <div class="logo">
-    <a href="/">B.A.C.E.</a>
+<div class="ui inverted segment">
+  <div class="ui inverted secondary pointing menu">
+    <a href="/" id="bace_link" class="item">
+      B.A.C.E.
+    </a>
+    <div class="right menu">
+    <% if session[:user_id] == nil %>
+    <a id="sign_in_link" href="/users/sessions/new" class="item">
+      Sign In
+    </a>
+    <a id="sign_up_link" href="/users/new" class="item">
+      Sign Up
+    </a>
+    <% else %>
+    <a id="log_out_link" href="/users/sessions/logout" class="item">
+      Log Out
+    </a>
+    <%end %>
     </div>
-    <ul>
-      <% if session[:user_id] == nil %>
-        <li><a href="/users/sessions/new">Sign In</a></li>
-        <li><a href="/users/new">Sign Up</a></li>
-      <% else %>
-        <li> <a href="/users/sessions/logout">Log Out</a></li>
-       <% end %>
-    </ul>
-  </nav>
+  </div>
+</div>

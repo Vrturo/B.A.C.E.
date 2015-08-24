@@ -1,5 +1,6 @@
 $( document ).ready(function() {
   termsAndConditions();
+ setActive();
 });
 
 termsAndConditions = function() {
@@ -18,4 +19,12 @@ termsAndConditions = function() {
       return false;
     }
   })
+};
+
+setActive = function() {
+  $('a').each(function() {
+    if ($(this).attr('href')  ===  window.location.pathname) {
+      $(this).addClass('active');
+    }
+  });
 };

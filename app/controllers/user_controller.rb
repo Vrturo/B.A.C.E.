@@ -67,7 +67,6 @@ post '/users/calculate' do
   final_bac_integer = subtract(bac.to_f, bac_dropped.to_f)
   @blood_alcohol_content = final_bac_integer.to_f.round(2)
 
-
   erb :'/users/calculate'
 end
 

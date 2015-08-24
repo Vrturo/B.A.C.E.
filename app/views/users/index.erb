@@ -1,9 +1,8 @@
 <%if session[:user_id] == nil  %>
-<div id="beer_pour_background">
-  <img src="http://media.giphy.com/media/92wsX8GEoNTYA/giphy.gif" alt="">
-</div>
+<%= erb :"/users/_beer_pour_background" %>
+
   Welcome
-<%else  %>
+<%else %>
 
   <h3>1 drink = 12oz. 5% beer, 1.25 oz. 40% liquor, 5oz. 12% wine</h3>
   <%= erb :'users/_index_form' %>

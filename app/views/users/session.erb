@@ -1,8 +1,36 @@
-<h1>Sign In</h1>
-  <form method="post" action="/users/sessions">
-      <label>Email</label>
-      <input type="email" name="email" placeholder="e.g., me@example.com">
-      <label>Password</label>
-      <input type="password" name="password" placeholder="6 or more characters">
-    <button type="submit">Sign In!</button>
-  </form>
+<%= erb :"/users/_beer_pour_background" %>
+
+<div class="ui middle aligned center aligned grid">
+  <div class="column">
+    <h2 class="ui black image header">
+      <img src="http://deansliquor.com/wp/wp-content/uploads/Beer-1127233004.png" class="image">
+      <div class="content">
+        Log in to your account
+      </div>
+    </h2>
+
+
+    <form class="ui large form" id="session_form" method="post" action="/users/sessions">
+      <div class="ui stacked segment">
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="user icon"></i>
+            <input type="text" name="email" placeholder="E-mail address">
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="lock icon"></i>
+            <input type="password" name="password" placeholder="Password">
+          </div>
+        </div>
+        <button class="ui fluid large grey submit button" type="submit">Log in</button>
+      </div>
+      <div class="ui error message"></div>
+    </form>
+
+    <div class="ui message">
+      First time here? <a href="/users/new">Sign Up</a>
+    </div>
+  </div>
+</div>
