@@ -60,13 +60,12 @@ post '/users/calculate' do
   # final_bac_integer = subtract(bac.to_f, bac_dropped.to_f)
   # @blood_alcohol_content = final_bac_integer.to_f.round(3)
 
-
   female_ratio = divide(weight.to_f, 2.2)
-  volume = multiply(female_ratio.to_f, 0.58)
+  volume = multiply(female_ratio.to_f, 0.45)
   bac = divide(drinks.to_f, volume.to_f)
   bac_dropped = multiply(time.to_f, 0.015)
   final_bac_integer = subtract(bac.to_f, bac_dropped.to_f)
-  @blood_alcohol_content = final_bac_integer.to_f.round(3)
+  @blood_alcohol_content = final_bac_integer.to_f.round(2)
 
 
   erb :'/users/calculate'

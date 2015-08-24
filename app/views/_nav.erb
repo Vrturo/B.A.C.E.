@@ -1,0 +1,13 @@
+<nav>
+    <div class="logo">
+    <a href="/">B.A.C.E.</a>
+    </div>
+    <ul>
+      <% if session[:user_id] == nil %>
+        <li><a href="/users/sessions/new">Sign In</a></li>
+        <li><a href="/users/new">Sign Up</a></li>
+      <% else %>
+        <li> <a href="/users/sessions/logout">Log Out</a></li>
+       <% end %>
+    </ul>
+  </nav>
