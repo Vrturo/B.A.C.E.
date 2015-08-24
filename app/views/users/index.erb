@@ -1,9 +1,18 @@
 <%if session[:user_id] == nil  %>
 <%= erb :"/users/_beer_pour_background" %>
 
-  Welcome
+<div class="ui middle aligned center aligned grid inverted black message">
+  <div class="column">
+  <h1 class="yellow ui header">
+    <img class="ui image" src="http://www.iconsplace.com/download/white-beer-256.png"></a>
+    <img class="ui image" src="https://cdn4.iconfinder.com/data/icons/shopping-symbol-2/500/accounting_black_business_calculator_electronics_icon_math_office-256.png"></a>
+        Welcome to B.A.C.E.
+  </h1>
+      <h2 class="content">(Blood Alcohol Content Estimator)</h2>
+      <button class="ui huge grey button" href="/users/sessions/new">Get Started <i class="right arrow icon"></i></button>
+  </div>
+</div>
 <%else %>
-
   <h3>1 drink = 12oz. 5% beer, 1.25 oz. 40% liquor, 5oz. 12% wine</h3>
   <%= erb :'users/_index_form' %>
 <% end %>
