@@ -1,0 +1,22 @@
+.banner {
+  background-image: url(http://media.giphy.com/media/UGBGJvDOExkGc/giphy.gif);
+  height: 130px;
+  width: 100%;
+  font-weight: bold;
+}
+#drink_scale{
+  text-align: center;
+  margin-bottom: 5%;
+  margin-top: 5%;
+}
+#legal_limit{
+  height: 87px;
+  width: 50px;
+  background-color: blue;
+  display: inline-block;
+}
+#you{
+  width: 50px;
+  display: inline-block;
+
+}
