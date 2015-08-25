@@ -35,7 +35,6 @@ validateForm = function(){
       $('.validate').each(function(index, element){
         this.value !== false
         })){
-    console.log("sup")
      $('#index_form').submit();
     }
   })
