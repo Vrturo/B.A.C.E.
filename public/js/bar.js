@@ -3,7 +3,10 @@ var barData = {
     datasets: [
         {
             label: 'Blood Alcohol Content',
-            fillColor: '#900000',
+            fillColor: "#585858",
+            strokeColor: "#000000",
+            highlightFill: "#400000",
+            highlightStroke: "#000000",
             data: [.08, json]
         }
     ]

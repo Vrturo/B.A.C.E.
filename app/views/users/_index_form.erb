@@ -2,30 +2,36 @@
   <form id="index_form" class="ui large form" method="post" action="/users/calculate">
     <div class="column">
       <div class="field">
-      <label>How many drinks have you had?</label>
-      <input class="validate"placeholder= "2..1" value="" type="number" step="any" name="drinks">
+        <label>How many drinks have you had?</label>
+        <div class="ui left icon input">
+        <i class="bar icon"></i>
+        <input class="validate"placeholder= "2.. many" value="" type="number" step="any" name="drinks">
+
       </div>
       <div class="field">
       <label>How much do you weigh?</label>
+      <div class="ui left icon input">
+        <i class="child icon"></i>
       <input class="validate" placeholder="lbs" type="number" step="any" name="weight">
       </div>
       <div class="field">
       <label>How long since your first drink?</label>
+      <div class="ui left icon input">
+        <i class="calendar icon"></i>
       <input class="validate" placeholder="Amount of hours" type="number" step="any" name="time">
       </div>
       <div class="field">
-      <label>Gender?</label>
-        <select id="dropdown" name ="gender">
-        <option value="gender">Gender</option>
-        <option value="male">Male</option>
-        <option value="female">Female</option>
-        </select>
-      </div>
-      <input type="checkbox" value="1" id="agree" />
-      <label>
-      I agree with the <a href="/terms-and-conditions" id="terms" data-content="This is an ESTIMATOR and is not 100% accurate. Use at your own risk." data-variation="very wide" >terms and conditions</a>.
-      </label>
-      </div>
+        <label>Gender?</label>
+          <select id="dropdown" name ="gender">
+          <option value="gender">Gender</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          </select>
+        </div>
+        <div class="field">
+            <input type="checkbox" value="1" id="agree" />
+            I agree with the <a href="/terms-and-conditions" id="terms" data-content="This is an ESTIMATOR and is not 100% accurate. Use at your own risk." data-variation="very wide" >terms and conditions</a>.
+        </div>
       <div class="field">
       <button type="submit" id="index_form_button" class="ui submit button">Submit</button>
     </div>
