@@ -21,7 +21,11 @@ post '/users' do
 end
 
 get '/users/sessions/new' do
+  if request.xhr?
+    ""
+  else
   erb :'/users/session'
+  end
 end
 
 post '/users/sessions' do
