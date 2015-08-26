@@ -20,3 +20,7 @@
   display: inline-block;
 
 }
+div.ui.popup{
+  background-color: #383838;
+  color: white;
+}

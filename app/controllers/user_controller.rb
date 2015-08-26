@@ -57,11 +57,3 @@ post '/users/calculate' do
   end
   erb :'/users/calculate'
 end
-
-
-
-
-
-
-
-
