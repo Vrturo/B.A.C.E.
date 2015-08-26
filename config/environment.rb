@@ -22,7 +22,6 @@ require 'sinatra/flash'
 require 'debugger'
 require 'erb'
 require 'bcrypt'
-
 require 'faker'
 # require 'nyan-cat-formatter'
 

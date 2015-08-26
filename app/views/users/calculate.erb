@@ -5,15 +5,14 @@
 <% else color = "green"%>
 <% end %>
 
-
-
-<div id="legal_limit"></div>
-<div id="you" style="height:<%= height %>px; background-color: <%= color %>"> </div>
-
-
-
 <% if @blood_alcohol_content < 0.08  %>
   <%= "below legal limit" %>
 <% else  %>
   <%= "above legal limit!" %>
 <% end %>
+
+
+<div id="legal_limit"></div>
+<div id="you" style="height:<%= height %>px; background-color: <%= color %>"> </div>
+
+<canvas id="myBar" width="500" height="400"></canvas>
