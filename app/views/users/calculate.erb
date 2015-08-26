@@ -1,9 +1,8 @@
+<script type="text/javascript">
+  var json = "<%= @blood_alcohol_content %>";
+</script>
+
 <h1> <%= @blood_alcohol_content %></h1>
-<% height = @blood_alcohol_content * 1000 %>
-<% color = ""; if height > 87  %>
-<% color = "red" %>
-<% else color = "green"%>
-<% end %>
 
 <% if @blood_alcohol_content < 0.08  %>
   <%= "below legal limit" %>
@@ -12,7 +11,5 @@
 <% end %>
 
 
-<div id="legal_limit"></div>
-<div id="you" style="height:<%= height %>px; background-color: <%= color %>"> </div>
 
-<canvas id="myBar" width="500" height="400"></canvas>
+<canvas id="myBar" width="300" height="600"></canvas>
