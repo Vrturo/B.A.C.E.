@@ -1,4 +1,7 @@
 helpers do
+  #hours_drank = time * 0.015
+  #volume = weight/2.2 * 0.58
+  #bac = drinks/volume - hours_drank
   def multiply(one, two)
     one * two
   end
@@ -9,5 +12,23 @@ helpers do
 
    def subtract(one, two)
     one - two
+  end
+
+  def male_algorithm(drinks, weight, time, gender)
+    male_ratio = divide(weight.to_f, 2.2)
+    volume = multiply(male_ratio.to_f, 0.58)
+    bac = divide(drinks.to_f, volume.to_f)
+    bac_dropped = multiply(time.to_f, 0.015)
+    final_bac_integer = subtract(bac.to_f, bac_dropped.to_f)
+    @blood_alcohol_content = final_bac_integer.to_f.round(2)
+  end
+
+  def female_algorithm(drinks, weight, time, gender)
+    female_ratio = divide(weight.to_f, 2.2)
+    volume = multiply(female_ratio.to_f, 0.45)
+    bac = divide(drinks.to_f, volume.to_f)
+    bac_dropped = multiply(time.to_f, 0.015)
+    final_bac_integer = subtract(bac.to_f, bac_dropped.to_f)
+    @blood_alcohol_content = final_bac_integer.to_f.round(2)
   end
 end

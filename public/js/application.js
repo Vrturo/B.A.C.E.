@@ -30,11 +30,12 @@ setActive = function() {
 validateForm = function(){
    $('#index_form_button').on('click', function(e){
     e.preventDefault();
-    dropdownIndex = $('option:selected').index();
-    if(dropdownIndex !== 0 && $('#agree').is(':checked') &&
+    if($('#dropdown').index() !== 0 && $('#agree').is(':checked') &&
       $('.validate').each(function(index, element){
         this.value !== false
-        })){
+        })
+      )
+    {
      $('#index_form').submit();
     }
   })
@@ -42,7 +43,7 @@ validateForm = function(){
 
 alerts = function(){
   $('#index_form_button').on('click', function(){
-    if($('#dropwdown').index() == 0){
+    if($('#dropdown').index() == 0){
       alert("Please Select a Gender to move on!");
     };
     if($('#agree').is(':checked') == false){
