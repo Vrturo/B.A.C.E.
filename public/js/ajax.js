@@ -9,7 +9,14 @@ var renderSignInForm = function(){
   $('#homepageMessageButton').on('click', function(e){
     e.preventDefault();
     var cb = function(responseData){
-      $('#homePageGrid').replaceWith(responseData)
+      $('.column').transition('fly right');
+      setTimeout(function(){
+        $('.column').replaceWith(responseData);
+        $('.column').hide();
+      }, 800);
+      setTimeout(function(){
+        $('.column').transition('fly right')
+        }, 800);
     }
     ajaxGetForm('/users/sessions/new', 'GET', null, cb);
     });

@@ -52,16 +52,18 @@ get '/users/calculate' do
 end
 
 post '/users/calculate' do
-  drinks = params[:drinks]
-  weight = params[:weight]
-  time = params[:time]
+  drinks = params[:drinks].to_f
+  weight = params[:weight].to_f
+  time = params[:time].to_f
   gender = params[:gender]
 
 
   if gender == "male"
-    male_algorithm(drinks, weight, time, gender)
+    # male_algorithm(drinks, weight, time, gender)
+    @blood_alcohol_content = bac(drinks, weight, time, :male)
   else
-    female_algorithm(drinks, weight, time, gender)
+    # female_algorithm(drinks, weight, time, gender)
+    @blood_alcohol_content = bac(drinks, weight, time, :female)
   end
   erb :'/users/calculate'
 end
