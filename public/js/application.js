@@ -50,11 +50,16 @@ alerts = function(){
       alert("You must agree with the terms and conditions to move on");
       return false;
     };
+
+
     $('.validate').each(function(index, element){
         if (this.value == false){
-          alert("Please fill all fields")
+          alert("Please fill all fields");
+          return false;
         }
-     })
+     });
+
+
   })
 }
 

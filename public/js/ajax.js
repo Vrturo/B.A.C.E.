@@ -54,10 +54,13 @@ var renderSignUpFormFromNav = function(){
     e.preventDefault();
     var cb = function(responseData){
       $('.column').transition('fly right');
+
       setTimeout(function(){
         $('.column').replaceWith(responseData);
-        $('.column').hide();
+        // $('.column').hide();
       }, 800);
+
+
       setTimeout(function(){
         $('.column').transition('fly right')
         }, 800);

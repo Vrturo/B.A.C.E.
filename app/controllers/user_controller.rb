@@ -52,17 +52,22 @@ get '/users/calculate' do
 end
 
 post '/users/calculate' do
+
+  # Create a new Model Type Calculation
+  # https://robots.thoughtbot.com/activemodel-form-objects
+
+
+
   drinks = params[:drinks].to_f
   weight = params[:weight].to_f
   time = params[:time].to_f
   gender = params[:gender]
 
 
+
   if gender == "male"
-    # male_algorithm(drinks, weight, time, gender)
     @blood_alcohol_content = bac(drinks, weight, time, :male)
   else
-    # female_algorithm(drinks, weight, time, gender)
     @blood_alcohol_content = bac(drinks, weight, time, :female)
   end
   erb :'/users/calculate'
