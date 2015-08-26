@@ -3,7 +3,11 @@ erb :'/users/index'
 end
 
 get '/users/new' do
-erb :'/users/new'
+  if request.xhr?
+    erb :'/users/_new_user_form',  {layout: false}
+  else
+    erb :'/users/new'
+  end
 end
 
 post '/users' do
@@ -22,9 +26,9 @@ end
 
 get '/users/sessions/new' do
   if request.xhr?
-    ""
+    erb :'/users/_new_session_form',  {layout: false}
   else
-  erb :'/users/session'
+    erb :'/users/session'
   end
 end
 

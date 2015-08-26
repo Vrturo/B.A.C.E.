@@ -5,14 +5,14 @@
     </a>
     <div class="right menu">
     <% if session[:user_id] == nil %>
-    <a id="sign_in_link" href="/users/sessions/new" class="item">
+    <a id="navSignInLink" href="/users/sessions/new" class="item">
       Sign In
     </a>
-    <a id="sign_up_link" href="/users/new" class="item">
+    <a id="navSignUpLink" href="/users/new" class="item">
       Sign Up
     </a>
     <% else %>
-    <a id="log_out_link" href="/users/sessions/logout" class="item">
+    <a id="navLogOutLink" href="/users/sessions/logout" class="item">
       Log Out
     </a>
     <%end %>
