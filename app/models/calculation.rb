@@ -1,32 +1,14 @@
-class Registration
+class Calculation
   include ActiveModel::Model
 
-  attr_accessor(
-    :company_name,
-    :email,
-    :first_name,
-    :last_name,
-    :terms_of_service
-  )
+  attr_accessor :drinks, :weight, :time, :gender
 
-  validates :company_name, presence: true
-  validates :email, presence: true, email: true
-  validates :first_name, presence: true
-  validates :last_name, presence: true
-  validates :terms_of_service, acceptance: true
+  validates :drinks, :weight, :time, :gender, presence: true
 
-  def register
-    if valid?
-      # Do something interesting here
-      # - create user
-      # - send notifications
-      # - log events, etc.
-    end
-  end
-
-  private
-
-  def create_user
-    # ...
+    def bac
+    ratio = self.gender == :male ? 0.73 : 0.66
+    bac = ((self.drinks * 5.14/self.weight * ratio ) - 0.015 * self.time).round(2)
+    (bac > 0) ? bac : 0.0
   end
 end
+
