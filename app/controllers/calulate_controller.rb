@@ -4,14 +4,19 @@ end
 
 post '/users/calculate' do
     @calculation = Calculation.new(
-    drinks: params[:drinks].to_f,
-    weight: params[:weight].to_f,
-    time: params[:time].to_f,
+    drinks: params[:drinks],
+    weight: params[:weight],
+    time: params[:time],
     gender: params[:gender])
+
+
+
   if @calculation.valid?
-    @blood_alcohol_content = @calculation.bac
-    erb :'/users/calculate'
+    @blood_alcohol_content = @calculation.bac(@calculation.gender, @calculation.drinks.to_f, @calculation.weight.to_f, @calculation.time.to_f)
+    erb :'users/calculate'
   else
-    erb :'/'
+    @form_error = 'Please fill all fields'
+    p @calculation.errors.messages
+    erb :'users/index'
   end
 end

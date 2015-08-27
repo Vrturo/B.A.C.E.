@@ -5,9 +5,15 @@
 <%else %>
 <div class="banner">
 </div>
-  <h2 id="drink_scale">
-    1 drink = 12oz. 5% beer, 1.25 oz. 40% liquor, 5oz. 12% wine
-  </h2>
+<h2 id="drink_scale">
+  1 drink = 12oz. 5% beer, 1.25 oz. 40% liquor, 5oz. 12% wine
+</h2>
+<% if @form_error %>
+<div class="error"><%= @form_error %></div>
+<% end %>
+
+
+
 
   <%= erb :'/users/_index_form' %>
 <% end %>

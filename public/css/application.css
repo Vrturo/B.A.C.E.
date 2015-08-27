@@ -24,3 +24,8 @@ div.ui.popup{
   background-color: #383838;
   color: white;
 }
+
+.error{
+  font-size: 24px;
+  color: red;
+}
