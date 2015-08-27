@@ -9,7 +9,7 @@ $(document).ready(function() {
               strokeColor: "#000000",
               highlightFill: "#B0B0B0",
               highlightStroke: "#000000",
-              data: [.08, json]
+              data: [.08, alcoholContent]
           }
       ]
   };

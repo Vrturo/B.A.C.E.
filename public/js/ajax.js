@@ -22,16 +22,6 @@ var renderSignInForm = function(){
     });
   }
 
-var renderSignUpForm = function(){
-  $('a#signUpLink').on('click', function(e){
-      e.preventDefault();
-      var cb = function(responseData){
-        $('#logInGrid').replaceWith(responseData)
-      };
-      ajaxGetForm('/users/new', 'GET', null, cb);
-  });
-};
-
 var renderSignInFormFromNav = function(){
   $('#navSignInLink').on('click', function(e){
     e.preventDefault();
@@ -66,6 +56,16 @@ var renderSignUpFormFromNav = function(){
     });
   }
 
+
+var renderSignUpForm = function(){
+  $('a#signUpLink').on('click', function(e){
+      e.preventDefault();
+      var cb = function(responseData){
+        $('#logInGrid').replaceWith(responseData)
+      };
+      ajaxGetForm('/users/new', 'GET', null, cb);
+  });
+};
 
 var ajaxGetForm = function(url, method, data, callback){
   $.ajax({
