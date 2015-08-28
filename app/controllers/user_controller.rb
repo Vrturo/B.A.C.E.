@@ -1,12 +1,12 @@
 get '/' do
-erb :'/users/index'
+erb :'users/index'
 end
 
 get '/users/new' do
   if request.xhr?
-    erb :'/users/_new_user_form',  {layout: false}
+    erb :'users/_new_user_form',  {layout: false}
   else
-    erb :'/users/new'
+    erb :'users/new'
   end
 end
 
@@ -20,15 +20,15 @@ post '/users' do
     set_session_n_redirect_home(@user)
   else
     flash[:message] = "Invalid Sign Up Combination. Try again"
-    erb :'/users/new'
+    erb :'users/new'
   end
 end
 
 get '/users/sessions/new' do
   if request.xhr?
-    erb :'/users/_new_session_form',  {layout: false}
+    erb :'users/_new_session_form',  {layout: false}
   else
-    erb :'/users/session'
+    erb :'users/session'
   end
 end
 
@@ -39,7 +39,7 @@ post '/users/sessions' do
     else
       status 406
       flash[:message] = "Invalid Sign In Combination. Try again"
-      erb :'/users/new'
+      erb :'users/new'
   end
 end
 

@@ -1,5 +1,5 @@
 get '/users/calculate' do
-  erb :"/users/calculate"
+  erb :"users/calculate"
 end
 
 post '/users/calculate' do
@@ -11,7 +11,7 @@ post '/users/calculate' do
     p params
   if @calculation.valid?
     @blood_alcohol_content = @calculation.bac(@calculation.gender, @calculation.drinks.to_f, @calculation.weight.to_f, @calculation.time.to_f)
-    erb :'users/calculate'
+    erb :'calculate/calculate'
   else
     @errors = @calculation.errors.messages
     erb :'users/index'
