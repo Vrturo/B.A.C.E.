@@ -26,6 +26,7 @@ div.ui.popup{
 }
 
 .error{
-  font-size: 24px;
+  font-size: 30px;
   color: red;
+  margin-top: 2%;
 }

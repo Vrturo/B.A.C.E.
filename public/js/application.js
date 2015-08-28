@@ -1,8 +1,8 @@
 $( document).ready(function() {
   setActive();
   termsAndConditions();
-  // alerts();
-  // validateForm();
+  alerts();
+  validateForm();
 });
 
 termsAndConditions = function() {
@@ -21,23 +21,23 @@ setActive = function() {
   });
 };
 
-// alerts = function(){
-//   $('#index_form_button').on('click', function(){
-//     if($('#dropdown').val() == "gender"){
-//       alert("Please Select a Gender to move on!");
-//     };
-//     if($('#agree').is(':checked') == false){
-//       alert("You must agree with the terms and conditions to move on");
-//       return false;
-//     };
-//   })
-// }
-// validateForm = function(){
-//    $('#index_form_button').on('click', function(e){
-//     if($('#dropdown').val() == "gender" && $('#agree').is(':checked') == false)
-//     {
-//      e.preventDefault();
-//     }
-//   })
-// }
+alerts = function(){
+  $('#index_form_button').on('click', function(){
+    if($('#dropdown').val() == "gender"){
+      alert("Please Select a Gender to move on!");
+    };
+    if($('#agree').is(':checked') == false){
+      alert("You must agree with the terms and conditions to move on");
+      return false;
+    };
+  })
+}
+validateForm = function(){
+   $('#index_form_button').on('click', function(e){
+    if($('#dropdown').val() == "gender" && $('#agree').is(':checked') == false)
+    {
+     e.preventDefault();
+    }
+  })
+}
 
