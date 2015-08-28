@@ -5,6 +5,15 @@
     </a>
     <div class="right menu">
     <% if session[:user_id] == nil %>
+     <div class="item">
+        <img href = "/uberoauth" src="https://cdn1.iconfinder.com/data/icons/social-black-buttons/512/uber-256.png">
+     </div>
+     <div class="item">
+        <a id="navUberSignUpLink" href="uberoauth">
+        Uber Sign In
+      </a>
+     </div>
+    </a>
     <a id="navSignInLink" href="/users/sessions/new" class="item">
       Sign In
     </a>
