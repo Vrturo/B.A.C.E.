@@ -8,7 +8,6 @@ post '/users/calculate' do
     weight: params[:weight],
     time: params[:time],
     gender: params[:gender])
-    p params
   if @calculation.valid?
     @blood_alcohol_content = @calculation.bac(@calculation.gender, @calculation.drinks.to_f, @calculation.weight.to_f, @calculation.time.to_f)
     erb :'calculate/calculate'
