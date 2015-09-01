@@ -26,10 +26,12 @@ get '/uberoauth' do
                   data:{scope: "profile"})
 
 
-  @user = UberUser.new(
+  @user = User.new(
           first_name: @profile["first_name"],
           last_name: @profile["last_name"],
-          email: @profile["email"])
+          email: @profile["email"],
+          password_hash: @profile["uuid"]
+          )
   if @user.save
     session[:user_id] = @user.id
     erb :"users/index"
