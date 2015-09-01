@@ -1,9 +1,6 @@
   require 'debugger'
   require 'JSON'
-  HEADER = {
-    'User-Agent' => "Awesome-Octocat-App",
-    "Authorization" => "token #{ENV['UBER_CLIENT_ID']}"
-  }
+
 
 get '/uberoauth' do
 
@@ -18,10 +15,19 @@ get '/uberoauth' do
       }
     }
   )
-  body = JSON.parse(response.body)
+  p body = JSON.parse(response.body)
   @access_token = body["access_token"]
 
-  session[:user_id] = @access_token
-  redirect '/'
+  HEADER = {
+    "Authorization" => "Bearer #{@access_token}"
+  }
+
+  # p HTTParty.get("https://api.uber.com/v1/me",
+  #                 headers: HEADER,
+  #                 data:{scope: "profile"})
+
+  # session[:user_id] = @access_token
+  # redirect '/'
 
 end
+
