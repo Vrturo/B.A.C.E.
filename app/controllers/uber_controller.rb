@@ -17,7 +17,6 @@ get '/uberoauth' do
   )
   body = JSON.parse(response.body)
   @access_token = body["access_token"]
-
   HEADER = {
     "Authorization" => "Bearer #{@access_token}"
   }
@@ -27,12 +26,12 @@ get '/uberoauth' do
                   data:{scope: "profile"})
 
 
-  @user = Uberuser.new(
+  @user = UberUser.new(
           first_name: @profile["first_name"],
           last_name: @profile["last_name"],
           email: @profile["email"])
-  if @user.valid?
-    session[:user_id] = @profile["uuid"]
+  if @user.save
+    session[:user_id] = @user.id
     erb :"users/index"
   else
     p @errors = @user.errors.messages

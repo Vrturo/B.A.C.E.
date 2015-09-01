@@ -1,7 +1,4 @@
-class Uberuser
-  include ActiveModel::Model
+class UberUser < ActiveRecord::Base
 
-  attr_accessor :first_name, :last_name, :email
-
-
+  validates :first_name, :last_name, :email, prescence: true
 end
