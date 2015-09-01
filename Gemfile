@@ -23,7 +23,6 @@ gem 'shotgun'
 
 gem 'slim', '~> 3.0.6'
 
-gem 'omniauth-uber'
 gem 'dotenv'
 gem 'json'
 

@@ -16,7 +16,7 @@ require 'logger'
 require 'httparty'
 require 'json'
 
-require 'omniauth-uber'
+
 require 'sinatra'
 require "sinatra/reloader" if development?
 require 'dotenv'
