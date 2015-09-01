@@ -5,7 +5,7 @@
     </a>
     <% if session[:user_id] %>
       <div class="item">
-        Welcome <%= @user.email %>!
+        Welcome <%= @user.first_name %>!
       </div>
     <% end %>
     <div class="right menu">
