@@ -15,19 +15,28 @@ get '/uberoauth' do
       }
     }
   )
-  p body = JSON.parse(response.body)
+  body = JSON.parse(response.body)
   @access_token = body["access_token"]
 
   HEADER = {
     "Authorization" => "Bearer #{@access_token}"
   }
 
-  # p HTTParty.get("https://api.uber.com/v1/me",
-  #                 headers: HEADER,
-  #                 data:{scope: "profile"})
+  @profile = HTTParty.get("https://api.uber.com/v1/me",
+                  headers: HEADER,
+                  data:{scope: "profile"})
 
-  # session[:user_id] = @access_token
-  # redirect '/'
 
+  @user = Uberuser.new(
+          first_name: @profile["first_name"],
+          last_name: @profile["last_name"],
+          email: @profile["email"])
+  if @user.valid?
+    session[:user_id] = @profile["uuid"]
+    erb :"users/index"
+  else
+    p @errors = @user.errors.messages
+    erb :"users/index"
+  end
 end
 
