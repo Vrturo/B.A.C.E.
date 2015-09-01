@@ -1,4 +1,7 @@
 get '/' do
+  @id = session[:user_id]
+  @user = User.find(@id)
+
 erb :'users/index'
 end
 

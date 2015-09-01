@@ -3,6 +3,11 @@
     <a href="/" id="bace_link" class="item">
       B.A.C.E.
     </a>
+    <% if session[:user_id] %>
+      <div class="item">
+        Welcome <%= @user.name %>!
+      </div>
+    <% end %>
     <div class="right menu">
     <% if session[:user_id] == nil %>
      <div class="item">
