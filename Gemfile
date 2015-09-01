@@ -17,11 +17,15 @@ gem 'activerecord', '~>4.1'
 gem 'rake'
 gem 'sinatra-flash', '~> 0.3.0'
 gem 'bcrypt-ruby'
-
+gem 'uber-ruby'
 gem 'httparty'
 gem 'shotgun'
 
 gem 'slim', '~> 3.0.6'
+
+gem 'omniauth-uber'
+gem 'dotenv'
+gem 'json'
 
 group :test do
   gem 'shoulda-matchers'

@@ -13,11 +13,16 @@ require 'pathname'
 require 'pg'
 require 'active_record'
 require 'logger'
+require 'httparty'
+require 'json'
 
+require 'omniauth-uber'
 require 'sinatra'
 require "sinatra/reloader" if development?
+require 'dotenv'
+Dotenv.load
 require 'sinatra/flash'
-
+require 'uber'
 require 'debugger'
 require 'erb'
 require 'bcrypt'
@@ -40,6 +45,8 @@ configure do
 
   # Set the views to
   set :views, File.join(Sinatra::Application.root, "app", "views")
+
+
 end
 
 # Set up the controllers and helpers
@@ -48,3 +55,7 @@ Dir[APP_ROOT.join('app', 'helpers', '*.rb')].each { |file| require file }
 
 # Set up the database and models
 require APP_ROOT.join('config', 'database')
+
+
+
+
