@@ -2,7 +2,7 @@ $( document).ready(function() {
   setActive();
   termsAndConditions();
   alerts();
-  validateForm();
+  welcomeJiggle();
 });
 
 termsAndConditions = function() {
@@ -41,3 +41,8 @@ validateForm = function(){
   })
 }
 
+welcomeJiggle = function(){
+  $('#welcome').on('hover', function(){
+    $('#welcome').transition('jiggle');
+  })
+}
