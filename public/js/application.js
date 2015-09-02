@@ -42,7 +42,7 @@ validateForm = function(){
 }
 
 welcomeJiggle = function(){
-  $('#welcome').on('hover', function(){
+  $('#welcome').hover(function(){
     $('#welcome').transition('jiggle');
   })
 }
