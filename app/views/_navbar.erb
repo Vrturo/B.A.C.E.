@@ -3,7 +3,7 @@
     <a href="/" id="bace_link" class="item">
       B.A.C.E.
     </a>
-    <% if session[:user_id] %>
+    <% if current_user %>
       <div id="welcome" class="item" style="color: white">
         Welcome <%= @user.first_name %>!
       </div>
