@@ -20,5 +20,9 @@ helpers do
     @user || @user = User.find(session[:user_id])
   end
 
+  def set_session(user)
+    session[:user_id] = user.id
+  end
+
 end
 

@@ -25,15 +25,16 @@ get '/uberoauth' do
                   headers: HEADER,
                   data:{scope: "profile"})
 
+  @user = User.where(email: @profile["email"]).first_or_create do |user|
 
-  @user = User.new(
-          first_name: @profile["first_name"],
-          last_name: @profile["last_name"],
-          email: @profile["email"],
-          password_hash: @profile["uuid"]
-          )
+    user.first_name = @profile["first_name"],
+    user.last_name = @profile["last_name"],
+    user.email = @profile["email"],
+    user.password_hash = @profile["uuid"]
+  end
+
   if @user.save
-    session[:user_id] = @user.id
+    set_session(@user)
     redirect '/'
   else
     p @errors = @user.errors.messages
