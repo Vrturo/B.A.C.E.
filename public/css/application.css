@@ -30,3 +30,17 @@ div.ui.popup{
   color: red;
   margin-top: 2%;
 }
+
+.bottomBanner{
+  height: 130px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+.drunkIcon{
+  height: 120px;
+  width: 120px;
+}

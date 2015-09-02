@@ -1,8 +1,6 @@
-get '/users/calculate' do
-  erb :"users/calculate"
-end
-
 post '/users/calculate' do
+    current_user
+
     @calculation = Calculation.new(
     drinks: params[:drinks],
     weight: params[:weight],

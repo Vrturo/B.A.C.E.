@@ -34,7 +34,7 @@ get '/uberoauth' do
           )
   if @user.save
     session[:user_id] = @user.id
-    erb :"users/index"
+    redirect '/'
   else
     p @errors = @user.errors.messages
     erb :"users/index"

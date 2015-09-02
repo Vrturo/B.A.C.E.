@@ -16,5 +16,9 @@ helpers do
     session.destroy
     redirect '/'
   end
+  def current_user
+    @user || @user = User.find(session[:user_id])
+  end
+
 end
 
