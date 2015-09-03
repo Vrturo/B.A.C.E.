@@ -3,9 +3,9 @@
     <a href="/" id="bace_link" class="item">
       B.A.C.E.
     </a>
-    <% if current_user %>
+    <% if session? %>
       <div id="welcome" class="item" style="color: white">
-        Welcome <%= @user.first_name %>!
+        Welcome <%= current_user.first_name %>!
       </div>
     <% end %>
     <div class="right menu">

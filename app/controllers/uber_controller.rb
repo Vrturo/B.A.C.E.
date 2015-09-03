@@ -21,27 +21,17 @@ get '/uberoauth' do
     "Authorization" => "Bearer #{@access_token}"
   }
 
-  p @profile = HTTParty.get("https://api.uber.com/v1/me",
+  @profile = HTTParty.get("https://api.uber.com/v1/me",
                   headers: HEADER,
                   data:{scope: "profile"})
 
-  p @user = User.where(email: @profile["email"]).first_or_create do |user|
-    user.first_name = @profile["first_name"],
-    user.last_name = @profile["last_name"],
-    user.email = @profile["email"],
-    user.password_hash = @profile["uuid"],
-    user.token = @profile["uuid"]
-    end
+  @user = User.find_or_create_by(email: @profile["email"],
+    first_name: @profile["first_name"],
+    last_name: @profile["last_name"],
+    password_hash:  @profile["uuid"],
+    token: @profile["uuid"])
 
-    # p @user = User.create(
-    #   first_name: @profile["first_name"],
-    #   last_name: @profile["last_name"],
-    #   email: @profile["email"],
-    #   password_hash: @profile["uuid"],
-    #   token: @profile["uuid"])
-
-
-  if @user || @user.save
+  if @user.save || @user
     set_session(@user)
     redirect '/'
   else

@@ -1,6 +1,6 @@
 helpers do
-  def session_logged_in?
-    !session_current_user.nil?
+  def session?
+    !session[:user_id].nil?
   end
 
   def set_session(user)

@@ -1,4 +1,4 @@
 
 5.times do
-  User.create :name => Faker::Name.name, :email => Faker::Internet.email, :password => 'password', gender: 'M'
+  User.create :first_name => Faker::Name.name, :last_name => Faker::Hacker.verb, :email => Faker::Internet.email, :password => 'password'
 end

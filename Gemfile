@@ -20,7 +20,6 @@ gem 'bcrypt-ruby'
 gem 'uber-ruby'
 gem 'httparty'
 gem 'shotgun'
-
 gem 'slim', '~> 3.0.6'
 
 gem 'dotenv'
