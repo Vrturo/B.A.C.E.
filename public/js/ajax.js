@@ -57,7 +57,7 @@ var renderSignUpFormFromNav = function(){
   }
 
 var renderMap = function(){
-  $('#massiveButton').on('click', function(e){
+  $('#clickMe').on('click', function(e){
     e.preventDefault();
     var cb = function(responseData){
       $('#bacBanner').transition('swing down');
