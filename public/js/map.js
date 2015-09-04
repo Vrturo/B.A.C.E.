@@ -50,12 +50,12 @@ directionsDisplay.setMap(map);
 var markerA = createMarker({
    position: dbc,
    map: map
- }, "<h1>A</h1>");
+ }, "<h1 id='personalMarker'>A</h1>");
 
 var checkForDrivers = function(){
    $('#checkDrivers').on('click', function(e){
     e.preventDefault();
-    $('#checkDrivers').hide();
+    $('#checkDrivers').replaceWith($('#requestRide'));
     $('#requestRide').show();
 
  var randomA = createMarker({
@@ -102,12 +102,22 @@ var checkForDrivers = function(){
  }, "<h1>B</h1>");
   })
 }
-var checkForDrivers = function(){
+var requestRide = function(){
    $('#requestRide').on('click', function(e){
     e.preventDefault();
     generateRouteBetween2Points(directionsDisplay)
+    $('#requestRide').replaceWith($('#request'));
+    $('#request').show();
+
+  })
+}
+var request = function(){
+   $('#request').on('click', function(e){
+    e.preventDefault();
   })
 }
 
-
 checkForDrivers();
+requestRide();
+request();
+
