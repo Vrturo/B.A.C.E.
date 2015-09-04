@@ -16,3 +16,4 @@ $(document).ready(function() {
   var context = document.getElementById('myBar').getContext('2d');
   var clientsChart = new Chart(context).Bar(barData);
 })
+

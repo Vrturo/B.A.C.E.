@@ -44,3 +44,13 @@ div.ui.popup{
   height: 120px;
   width: 120px;
 }
+
+#map{
+     height: 600px;
+     width: 600px;
+}
+
+.car{
+    height: 60px;
+     width: 60px;
+}

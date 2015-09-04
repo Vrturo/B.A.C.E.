@@ -4,9 +4,11 @@
   <script src="/Chart.js/Chart.js"></script>
   <script src="/js/bar.js"></script>
 
-<div class="ui middle aligned center aligned grid">
-  <div class="column">
-    <h1 class="ui huge header">
+<div class="ui grid">
+  <div class="one wide column">
+  </div>
+  <div class="six wide column">
+      <h1 class="ui huge header">
       Your BAC: <%= @blood_alcohol_content %></h1>
       <h2 class="ui sub header">
         <% if @blood_alcohol_content < 0.08  %>
@@ -16,5 +18,10 @@
         <% end %>
       </h2>
     <canvas id="myBar" width="300" height="600"></canvas>
+    </div>
+    <div class="ui medium circular image nine wide column">
+    <div id="map">
+    </div>
   </div>
 </div>
+
