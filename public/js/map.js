@@ -114,6 +114,7 @@ var requestRide = function(){
 var request = function(){
    $('#request').on('click', function(e){
     e.preventDefault();
+    alert("Your ride will be here soon!! Expect a call!")
   })
 }
 
