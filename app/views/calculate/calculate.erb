@@ -1,0 +1,58 @@
+<script type="text/javascript">
+  var alcoholContent = "<%= @blood_alcohol_content %>";
+</script>
+  <script src="/Chart.js/Chart.js"></script>
+  <script src="/js/bar.js"></script>
+   <script src="http://maps.googleapis.com/maps/api/js?v=3&amp;sensor=false"></script>
+
+
+<div id="grid" class="ui grid">
+  <div class="one wide column">
+  </div>
+  <div class="six wide column">
+      <h1 class="ui huge header">
+      Your BAC: <%= @blood_alcohol_content %></h1>
+      <h2 class="ui sub header">
+        <% if @blood_alcohol_content < 0.08  %>
+          <%= "below legal limit" %>
+        <% else  %>
+          <%= "above legal limit!" %>
+        <% end %>
+      </h2>
+    <canvas id="myBar" width="300" height="600"></canvas>
+    </div>
+          <% if @blood_alcohol_content > 0.08  %>
+    <div id="bacBanner" class="ui nine wide column">
+      <div id="shit" class="ui center align fluid container">
+            <div class="ui left aligned header">
+                <img id="drink_n_drive"src="http://www.charlottebartendersball.com/uploads/uber_lockup_black.png"/>
+            </div>
+              <div class="ui left aligned sub header">
+                <div id="recommend"> We really recommend you take an uber home!
+                </div>
+              </div>
+                <div id="box" class="column"></div>
+                <div id="clickMe"href=" " class="massive ui center aligned  white button">
+                    Click me!
+                </div>
+              </div>
+              </div>
+            </div>
+      </div>
+    </div>
+          <% else  %>
+          <div id="lowbacBanner" class="ui nine wide column">
+            <div class="ui fluid container">
+              <div class="ui left aligned header">
+               <img id="drink_n_drive" src="<%= @image.url %>"/>
+              </div>
+              <div style="font-size:30px" class="ui sub header">
+                <h2><%= @image.caption %></h2>
+              </div>
+             </div>
+          </div>
+          <% end %>
+</div>
+<script src="/js/map.js"></script>
+
+

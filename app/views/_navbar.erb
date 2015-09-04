@@ -3,16 +3,30 @@
     <a href="/" id="bace_link" class="item">
       B.A.C.E.
     </a>
+    <% if session? %>
+      <div id="welcome" class="item" style="color: white">
+        Welcome <%= current_user.first_name %>!
+      </div>
+    <% end %>
     <div class="right menu">
     <% if session[:user_id] == nil %>
-    <a id="sign_in_link" href="/users/sessions/new" class="item">
+     <div class="item">
+        <img src="https://cdn1.iconfinder.com/data/icons/social-black-buttons/512/uber-256.png">
+     </div>
+     <div class="item">
+        <a id="navUberSignUpLink" href="https://login.uber.com/oauth/authorize?response_type=code&client_id=9z6pxBTjyMZZHtdIOndfCfN1pnl_v8q7">
+        Uber Sign In
+      </a>
+     </div>
+    </a>
+    <a id="navSignInLink" href="/users/sessions/new" class="item">
       Sign In
     </a>
-    <a id="sign_up_link" href="/users/new" class="item">
+    <a id="navSignUpLink" href="/users/new" class="item">
       Sign Up
     </a>
     <% else %>
-    <a id="log_out_link" href="/users/sessions/logout" class="item">
+    <a id="navLogOutLink" href="/users/sessions/logout" class="item">
       Log Out
     </a>
     <%end %>

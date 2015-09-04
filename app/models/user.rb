@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
-  validates :name, :email, :password_hash, presence: true
-  validates :name, :email, uniqueness: true
+  validates :first_name, :last_name, :email, :password_hash, presence: true
+  validates :email, uniqueness: true
   validates :password_hash, length: { minimum: 6}
   include BCrypt
 

@@ -1,14 +1,22 @@
 get '/' do
-erb :'/users/index'
+  if session[:user_id]
+    @user = User.find(session[:user_id])
+  end
+erb :'users/index'
 end
 
 get '/users/new' do
-erb :'/users/new'
+  if request.xhr?
+    erb :'users/_new_user_form',  {layout: false}
+  else
+    erb :'users/new'
+  end
 end
 
 post '/users' do
   @user = User.new(
-    name: params[:name],
+    first_name: params[:first_name],
+    last_name: params[:last_name],
     email: params[:email],
     password: params[:password]
     )
@@ -16,12 +24,16 @@ post '/users' do
     set_session_n_redirect_home(@user)
   else
     flash[:message] = "Invalid Sign Up Combination. Try again"
-    erb :'/users/new'
+    erb :'users/new'
   end
 end
 
 get '/users/sessions/new' do
-  erb :'/users/session'
+  if request.xhr?
+    erb :'users/_new_session_form',  {layout: false}
+  else
+    erb :'users/session'
+  end
 end
 
 post '/users/sessions' do
@@ -31,49 +43,10 @@ post '/users/sessions' do
     else
       status 406
       flash[:message] = "Invalid Sign In Combination. Try again"
-      erb :'/users/new'
+      erb :'users/new'
   end
 end
 
 get '/users/sessions/logout' do
   session_logout_and_redirect
 end
-
-get '/users/calculate' do
-  erb :"/users/calculate"
-end
-
-post '/users/calculate' do
-  drinks = params[:drinks]
-  weight = params[:weight]
-  time = params[:time]
-  gender = params[:gender]
-
-  #hours_drank = time * 0.015
-  #volume = weight/2.2 * 0.58
-  #bac = drinks/volume - hours_drank
-
-  # male_ratio = divide(weight.to_f, 2.2)
-  # volume = multiply(male_ratio.to_f, 0.58)
-  # bac = divide(drinks.to_f, volume.to_f)
-  # bac_dropped = multiply(time.to_f, 0.015)
-  # final_bac_integer = subtract(bac.to_f, bac_dropped.to_f)
-  # @blood_alcohol_content = final_bac_integer.to_f.round(3)
-
-  female_ratio = divide(weight.to_f, 2.2)
-  volume = multiply(female_ratio.to_f, 0.45)
-  bac = divide(drinks.to_f, volume.to_f)
-  bac_dropped = multiply(time.to_f, 0.015)
-  final_bac_integer = subtract(bac.to_f, bac_dropped.to_f)
-  @blood_alcohol_content = final_bac_integer.to_f.round(2)
-
-  erb :'/users/calculate'
-end
-
-
-
-
-
-
-
-

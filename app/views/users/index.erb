@@ -1,23 +1,19 @@
 <%if session[:user_id] == nil  %>
-<%= erb :"/users/_beer_pour_background" %>
 
-<div class="ui middle aligned center aligned grid ">
-  <div class="column">
-    <div class="black ui message">
-      <div class="ui left aligned header">
-    <img class="ui image" src="http://www.iconsplace.com/download/white-beer-256.png"></a>
-    <img class="ui image" src="https://cdn4.iconfinder.com/data/icons/shopping-symbol-2/500/accounting_black_business_calculator_electronics_icon_math_office-256.png"></a>
-  </div>
-      <h1 class="yellow ui right aligned huge header">
-        Welcome to B.A.C.E.</h1>
-      <h3 class="content">(Blood Alcohol Content Estimator)</h3>
-      <a class="ui huge grey button" href="/users/sessions/new">Get Started <i class="right arrow icon"></i></a>
-    </div>
-  </div>
-</div>
+<%= erb :_beer_pour_background %>
+<%= erb :_homepage_message  %>
 <%else %>
 <div class="banner">
 </div>
-  <h3 id="drink_scale">1 drink = 12oz. 5% beer, 1.25 oz. 40% liquor, 5oz. 12% wine</h3>
+<h2 id="drink_scale">
+  1 drink = 12oz. 5% beer, 1.25 oz. 40% liquor, 5oz. 12% wine
+</h2>
+<% if @errors %>
+  <% @errors.each do |key, val| %>
+    <div class="error"><%= "#{key} field #{val[0]}!" %></div>
+  <% end %>
+<% end %>
   <%= erb :'users/_index_form' %>
+
+<%= erb :_bottom_icon_banner %>
 <% end %>

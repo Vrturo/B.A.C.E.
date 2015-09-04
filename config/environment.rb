@@ -7,22 +7,25 @@ require 'bundler/setup' if File.exists?(ENV['BUNDLE_GEMFILE'])
 
 # Require gems we care about
 require 'rubygems'
-
 require 'uri'
 require 'pathname'
 
 require 'pg'
 require 'active_record'
 require 'logger'
+require 'httparty'
+require 'json'
+
 
 require 'sinatra'
 require "sinatra/reloader" if development?
+require 'dotenv'
+Dotenv.load
 require 'sinatra/flash'
-
+require 'uber'
 require 'debugger'
 require 'erb'
 require 'bcrypt'
-
 require 'faker'
 # require 'nyan-cat-formatter'
 
@@ -42,6 +45,8 @@ configure do
 
   # Set the views to
   set :views, File.join(Sinatra::Application.root, "app", "views")
+
+
 end
 
 # Set up the controllers and helpers
@@ -50,3 +55,7 @@ Dir[APP_ROOT.join('app', 'helpers', '*.rb')].each { |file| require file }
 
 # Set up the database and models
 require APP_ROOT.join('config', 'database')
+
+
+
+

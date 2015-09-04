@@ -20,3 +20,64 @@
   display: inline-block;
 
 }
+div.ui.popup{
+  background-color: #383838;
+  color: white;
+}
+
+.error{
+  font-size: 30px;
+  color: red;
+  margin-top: 2%;
+}
+
+.bottomBanner{
+  height: 130px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+.drunkIcon{
+  height: 120px;
+  width: 120px;
+}
+
+#map{
+     height: 600px;
+     width: 600px;
+}
+
+.car{
+    height: 60px;
+     width: 60px;
+}
+
+#drink_n_drive{
+  width: 80%;
+  height: 80%;
+}
+
+.recommend{
+  font-size: 400px;
+}
+
+#checkDrivers{
+  margin: auto;
+}
+#massiveButton{
+  margin: auto;
+}
+
+#recommend{
+  font-style: italic;
+  font-size:23px;
+  right-margin: 5%;
+}
+#box{
+  background-color: white;
+  width: 100px;
+  height: 100px;
+}
