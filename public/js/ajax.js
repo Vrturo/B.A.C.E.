@@ -76,7 +76,6 @@ var ajaxGetForm = function(url, method, data, callback){
         method: method
       })
       .done(function(responseData){
-        console.log(responseData)
         callback(responseData);
       })
       .fail(function(responseData){
