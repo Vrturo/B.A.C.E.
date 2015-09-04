@@ -26,8 +26,18 @@ end
 get '/users/calculate/map' do
 
   if request.xhr?
-    erb :_map
+    erb :_map, {layout: false}
   else
     erb :_map
+  end
+end
+
+
+get '/users/calculate/checkdrivers' do
+  if request.xhr?
+    erb :_checkdrivers, {layout: false}
+  else
+    p "fail"
+    erb :_checkdrivers
   end
 end

@@ -1,10 +1,15 @@
+
+
 <script type="text/javascript">
   var alcoholContent = "<%= @blood_alcohol_content %>";
 </script>
   <script src="/Chart.js/Chart.js"></script>
   <script src="/js/bar.js"></script>
+   <script src="http://maps.googleapis.com/maps/api/js?v=3&amp;sensor=false"></script>
 
-<div class="ui grid">
+
+
+<div id="grid" class="ui grid">
   <div class="one wide column">
   </div>
   <div class="six wide column">
@@ -19,7 +24,8 @@
       </h2>
     <canvas id="myBar" width="300" height="600"></canvas>
     </div>
-    <div class="ui nine wide column">
+    <div id="shit" class="ui nine wide column">
+              <div class="container">
           <% if @blood_alcohol_content < 0.08  %>
             <div class="ui left aligned header">
                <img id="drink_n_drive" src="/imgs/dont_drink_and_drive.jpg"/>
@@ -33,6 +39,19 @@
           <% else  %>
             <%= "above legal limit!" %>
           <% end %>
+
     </div>
   </div>
+  </div>
 </div>
+  <div id="rapper" class="ui medium circular image nine wide column">
+  <div id="map">
+  </div>
+</div>
+
+  <button style="display:none" id="checkDrivers" href=" " class="massive ui center aligned button">
+        Check for Drivers
+    </button>
+<script src="/js/map.js"></script>
+
+

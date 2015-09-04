@@ -63,3 +63,14 @@ div.ui.popup{
 .recommend{
   font-size: 400px;
 }
+
+#checkDrivers{
+  margin: auto;
+}
+#orderRide{
+  margin: auto;
+}
+
+#rapper{
+  display: none;
+}
