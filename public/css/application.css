@@ -54,3 +54,12 @@ div.ui.popup{
     height: 60px;
      width: 60px;
 }
+
+#drink_n_drive{
+  width: 80%;
+  height: 80%;
+}
+
+.recommend{
+  font-size: 400px;
+}

@@ -22,3 +22,12 @@ post '/users/calculate' do
     erb :'users/index'
   end
 end
+
+get '/users/calculate/map' do
+
+  if request.xhr?
+    erb :_map
+  else
+    erb :_map
+  end
+end

@@ -1,8 +1,8 @@
 $(document).ready(function() {
   renderSignInForm();
-  renderSignUpForm();
   renderSignInFormFromNav();
   renderSignUpFormFromNav();
+  renderMap();
 });
 
 var renderSignInForm = function(){
@@ -56,18 +56,23 @@ var renderSignUpFormFromNav = function(){
     });
   }
 
+var renderMap = function(){
+  $('#massiveButton').on('click', function(e){
+    e.preventDefault();
+    var cb = function(responseData){
+      $('.ui nine wide column').transition('fly left');
+      setTimeout(function(){
+        $('.ui nine wide column').replaceWith(responseData);
+        $('.ui nine wide column').hide();
+      }, 800);
+      setTimeout(function(){
+        $('.ui nine wide column').transition('fly left')
+        }, 800);
+    }
+    ajaxGetForm('/users/calculate/map', 'GET', null, cb);
+    });
+}
 
-//--------------vv doesnt work FIX!
-var renderSignUpForm = function(){
-  $('a#signUpLink').on('click', function(e){
-      e.preventDefault();
-      var cb = function(responseData){
-        console.log(responseData)
-      };
-      ajaxGetForm('/users/new', 'GET', null, cb);
-  });
-};
-// ----------------------------------------
 
 var ajaxGetForm = function(url, method, data, callback){
   $.ajax({
@@ -75,6 +80,7 @@ var ajaxGetForm = function(url, method, data, callback){
         method: method
       })
       .done(function(responseData){
+        console.log(responseData)
         callback(responseData);
       })
       .fail(function(responseData){

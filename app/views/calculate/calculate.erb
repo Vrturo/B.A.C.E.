@@ -19,9 +19,20 @@
       </h2>
     <canvas id="myBar" width="300" height="600"></canvas>
     </div>
-    <div class="ui medium circular image nine wide column">
-    <div id="map">
+    <div class="ui nine wide column">
+          <% if @blood_alcohol_content < 0.08  %>
+            <div class="ui left aligned header">
+               <img id="drink_n_drive" src="/imgs/dont_drink_and_drive.jpg"/>
+            </div>
+              <div style="font-size:30px" class="ui sub header">
+                We recommend you take an Uber home!
+              </div>
+                <button id="massiveButton" href=" " class="massive ui center aligned button">
+                    Massive
+                </button>
+          <% else  %>
+            <%= "above legal limit!" %>
+          <% end %>
     </div>
   </div>
 </div>
-
