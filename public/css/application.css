@@ -67,10 +67,11 @@ div.ui.popup{
 #checkDrivers{
   margin: auto;
 }
-#orderRide{
+#massiveButton{
   margin: auto;
 }
 
-#rapper{
-  display: none;
+#lowbacBanner{
+  background-color: grey;
 }
+

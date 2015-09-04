@@ -31,13 +31,3 @@ get '/users/calculate/map' do
     erb :_map
   end
 end
-
-
-get '/users/calculate/checkdrivers' do
-  if request.xhr?
-    erb :_checkdrivers, {layout: false}
-  else
-    p "fail"
-    erb :_checkdrivers
-  end
-end

@@ -3,7 +3,6 @@ $(document).ready(function() {
   renderSignInFormFromNav();
   renderSignUpFormFromNav();
   renderMap();
-  checkDrivers();
 });
 
 var renderSignInForm = function(){
@@ -61,33 +60,18 @@ var renderMap = function(){
   $('#massiveButton').on('click', function(e){
     e.preventDefault();
     var cb = function(responseData){
-      $('#shit').transition('fly left');
+      $('#bacBanner').transition('fly left');
       setTimeout(function(){
-        $('#shit').replaceWith($('#rapper'));
-        $('#rapper').show();
-        $('#grid').append($('checkDrivers'));
-        $('body').append(responseData);
+        $('#bacBanner').replaceWith(responseData);
+        $('#bacBanner').hide();
       }, 800);
+      setTimeout(function(){
+        $('#bacBanner').transition('fly left')
+        }, 800);
     }
     ajaxGetForm('/users/calculate/map', 'GET', null, cb);
     });
 }
-
-var checkDrivers = function(){
-  $('#checkDrivers').on('click', function(e){
-    e.preventDefault();
-    var cb = function(responseData){
-      console.log(responseData)
-      $('#shit').transition('fly left');
-      setTimeout(function(){
-        $('#shit').replaceWith(responseData);
-        $('#shit').hide();
-      }, 800);
-    }
-    ajaxGetForm('/users/calculate/checkdrivers', 'GET', null, cb);
-    });
-}
-
 
 var ajaxGetForm = function(url, method, data, callback){
   $.ajax({

@@ -1,3 +1,5 @@
+// Part 1
+
 var dbc = new google.maps.LatLng(37.784577, -122.397211);
 var uberDriver = generateRandomSFCoords();
 function createMarker(options, html) {
@@ -27,6 +29,7 @@ var markerA = createMarker({
    map: map
  }, "<h1>A</h1>");
 
+// // Part 2 -----------------------------------
 //  var markerB = createMarker({
 //    position: uberDriver,
 //    map: map,
@@ -51,6 +54,7 @@ var markerA = createMarker({
 //    icon: "http://www.toprealty.com.au/sites/top_realty/img/garage1.png"
 //  }, "<h1>B</h1>");
 
+// // Part 3 --------------------------
 // var drivePath = [dbc, uberDriver]
 // function generateRouteBetween2Points(directionDisplay1){
 
