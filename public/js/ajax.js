@@ -60,14 +60,11 @@ var renderMap = function(){
   $('#massiveButton').on('click', function(e){
     e.preventDefault();
     var cb = function(responseData){
-      $('#bacBanner').transition('fly left');
+      $('#bacBanner').transition('swing down');
       setTimeout(function(){
         $('#bacBanner').replaceWith(responseData);
         $('#bacBanner').hide();
-      }, 800);
-      setTimeout(function(){
-        $('#bacBanner').transition('fly left')
-        }, 800);
+      }, 1200);
     }
     ajaxGetForm('/users/calculate/map', 'GET', null, cb);
     });
