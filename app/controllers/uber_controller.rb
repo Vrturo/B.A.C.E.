@@ -1,7 +1,5 @@
   require 'debugger'
   require 'JSON'
-
-
 get '/uberoauth' do
 
   response = HTTParty.post('https://login.uber.com/oauth/token',
@@ -25,14 +23,17 @@ get '/uberoauth' do
                   headers: HEADER,
                   data:{scope: "profile"})
 
-  @user = User.find_or_create_by(email: @profile["email"],
+  p @user = User.find_or_create_by(email: @profile["email"],
     first_name: @profile["first_name"],
     last_name: @profile["last_name"],
     password_hash:  @profile["uuid"],
     token: @profile["uuid"])
 
   if @user.save || @user
-    set_session(@user)
+    p @access_token
+    session[:access_token] = @access_token
+    session[:user_id] = @user.id
+    p session
     redirect '/'
   else
     p @errors = @user.errors.messages
