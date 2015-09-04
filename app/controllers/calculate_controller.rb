@@ -15,8 +15,9 @@ post '/users/calculate' do
     time: params[:time],
     gender: params[:gender])
 
-    @image = FillerImage.random
+
   if @calculation.valid?
+    @image = FillerImage.random
 
     @blood_alcohol_content = @calculation.bac(@calculation.gender, @calculation.drinks.to_f, @calculation.weight.to_f, @calculation.time.to_f)
     erb :'calculate/calculate'
