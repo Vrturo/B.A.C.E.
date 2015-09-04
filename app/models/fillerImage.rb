@@ -1,15 +1,14 @@
 class FillerImage
   IMAGES = [
     {url: 'http://quotlr.com/images/quotes/4bb8b6be462911e39a1922000a9d0dee_8.jpg', caption: 'TRUST ME.'},
-    {url: 'https://img0.etsystatic.com/045/0/10524898/il_fullxfull.714666944_sk3h.jpg', caption: 'two'},
-    {url: 'http://m.memegen.com/0r5nyd.jpg', caption: 'Remember to keep it calssy!'},
-    {url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmJznz9WoAchWnJwmKxyt_UGWFEYZPKgDxA14JkM2sMLsl_YdHxw', caption: 'four'},
-    {url: 'hello', caption: 'five'}
+    {url: 'http://www.trademarkia.com/logo-images/bg-wines-usa-llc/live-passionately-drink-responsibly-77001618.jpg', caption: 'Be safe.'},
+    {url: 'http://www.pomgen.gov.pg/wp-content/uploads/2015/04/drink_responsibly-1024x576.jpg', caption: 'Have fun and be safe!'},
+    {url: 'http://wanna-joke.com/wp-content/uploads/2015/03/happy-drunk-quote.jpg', caption: ''}
   ]
 
   DEFAULT = {
-    url: 'hello',
-    caption: 'default'
+    url: 'http://quotlr.com/images/quotes/4bb8b6be462911e39a1922000a9d0dee_8.jpg',
+    caption: 'TRUST ME.'
   }
 
   attr_reader :url, :caption
