@@ -16,7 +16,7 @@ gem 'activerecord', '~>4.1'
 
 gem 'rake'
 gem 'sinatra-flash', '~> 0.3.0'
-gem 'bcrypt-ruby'
+gem 'bcrypt'
 gem 'uber-ruby'
 gem 'httparty'
 gem 'shotgun'
