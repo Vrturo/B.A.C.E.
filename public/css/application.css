@@ -81,3 +81,12 @@ div.ui.popup{
   width: 100px;
   height: 100px;
 }
+#requestRide{
+  display: none;
+  margin: auto;
+}
+
+#request{
+  display: none;
+  margin: auto;
+}
