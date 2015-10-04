@@ -2,7 +2,12 @@ B.A.C.E.(Blood Alcohol Content Estimator) is a web app that uses Uber's API to l
 
 This web app was made with Sinatra, Ruby, and Javascript. And with the help of the Uber API of Chart.Js and and Google Maps API it shows a chart of what their current BAC would be at and recommends they take an Uber ride home from where they are at.
 
+To Run:
 
+bacestimator.herokuapp.com
+
+
+-----
 Steps when cloned:
 
 cd B.A.C.E.
