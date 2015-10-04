@@ -1,9 +1,15 @@
-This repo should be used to hold your phase 2, week 1 passion project.
+B.A.C.E.(Blood Alcohol Content Estimator) is a web app that uses Uber's API to log in, create an account, and is used to let users know an estimate of what their BAC(blood alcohol content) would be based on an algorithm that takes the amount of fluid ozs of alcohol they've had, their weight, their gender, and the amount of time they've been drinking. If their BAC is too high it recommends they order an Uber ride and get home safely.
 
-see more about portfolio challenges and passion projects here
+This web app was made with Sinatra, Ruby, and Javascript. And with the help of the Uber API of Chart.Js and and Google Maps API it shows a chart of what their current BAC would be at and recommends they take an Uber ride home from where they are at.
 
 
+To run this:
+Bundle Install
 
+be rake db:create
+be rake db:migrate
+
+be shotgun
 <!--
 PSEUDOCODE-------------------
 BAC calculator 1 drink = 1.5oz shot of 80 proof liquor 40% 1 drink = 12oz (5% beer) 1 drink = 5oz wine(12%)
