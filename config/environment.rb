@@ -25,8 +25,7 @@ require 'sinatra/flash'
 require 'uber'
 require 'erb'
 require 'bcrypt'
-require 'faker'
-# require 'nyan-cat-formatter'
+
 
 
 # Some helper constants for path-centric logic
