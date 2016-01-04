@@ -1,29 +1,29 @@
-B.A.C.E.(Blood Alcohol Content Estimator) is a web app that uses Uber's API to log in, create an account, and is used to let users know an estimate of what their BAC(blood alcohol content) would be based on an algorithm that takes the amount of fluid ozs of alcohol they've had, their weight, their gender, and the amount of time they've been drinking. If their BAC is too high it recommends they order an Uber ride and get home safely.
+# B.A.C.E.(Blood Alcohol Content Estimator)
 
-This web app was made with Sinatra, Ruby, and Javascript. And with the help of the Uber API of Chart.Js and and Google Maps API it shows a chart of what their current BAC would be at and recommends they take an Uber ride home from where they are at.
+B.A.C.E.(Blood Alcohol Content Estimator) is a web app that uses Uber's API to create an account or log in, and is used to let users know an estimate of what their BAC(blood alcohol content) would be based on an algorithm that takes the amount of fluid ozs of alcohol they've had, their weight, their gender, and the amount of time they've been drinking. If their BAC is too high it recommends they order an Uber ride and get home safely.
 
-To Run:
+NOTE: You can not order a ride home from the app. I set up a mock scenario on what the app would run like but ordering a ride through someone's app took extra permission from Uber that I didnt apply for.
+
+Link to app:
 
 bacestimator.herokuapp.com
 
+## Technical Stack
+------------------
+#### Front End
+For the front end I used a Front End framework called Semantic. It helped with positioning and styling of forms and thats about it. I used HTML/CSS to do all other styling and used Javascript to render DOM events like the rendering of the Google Map and Chart.
 
------
-Steps when cloned:
 
-cd B.A.C.E.
 
-Bundle Install
+#### Back End
+This web app was made with Sinatra. I used the user controller to help the logic of signing up and logging in existing users, and the user model to store the user's information. I used the calculation model to store the algorithm that takes the user parameters and does the calculation, and the calculate controller to make sure all the params are valid and passes the calculate logic to the view. I used three different API's to put this together. I used Uber's API to let a user create an account or sign in if they had an existing one. I used the Chart.Js API to let a user see how high their BAC is compared to the legal limit, if over it recommends they take an Uber ride home from where they are at. And I also used Google Maps API to sharea users location and recommend they'd take an uber to get home.
 
-be rake db:create
 
-be rake db:migrate
-
-be shotgun
-
-https://localhost:9393
-
+## Future Additions
 --------------
-This is definitely a fun project I worked on for a bit. If you have any suggestions on how to improve this or if you'd like to add to it, feel free to email me at VrturoPerez@gmail.com
+This is definitely a fun project I worked on for a bit. If I had more time or if I did it over I'd use a bigger framework liek rails. My idea started small and kept getting bigger and with additional features a biger framework like rails would be ideal.
+
+Also I used Uber's API to let a user log in but I would've liked it if I could let a user order a ride through the app. That took extra permissions from Uber that I didnt ask for.
 
 <!--
 PSEUDOCODE-------------------
