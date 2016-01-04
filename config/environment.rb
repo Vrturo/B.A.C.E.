@@ -9,13 +9,12 @@ require 'bundler/setup' if File.exists?(ENV['BUNDLE_GEMFILE'])
 require 'rubygems'
 require 'uri'
 require 'pathname'
-
+require 'rake'
 require 'pg'
 require 'active_record'
 require 'logger'
 require 'httparty'
 require 'json'
-
 require 'sinatra'
 require "sinatra/reloader" if development?
 require 'dotenv'
