@@ -1,5 +1,5 @@
 require 'rake'
-
+require 'rspec'
 
 require ::File.expand_path('../config/environment', __FILE__)
 
