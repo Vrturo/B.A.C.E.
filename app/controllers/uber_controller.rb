@@ -1,4 +1,3 @@
-  require 'JSON'
 get '/uberoauth' do
 
   response = HTTParty.post('https://login.uber.com/oauth/token',
