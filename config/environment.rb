@@ -15,7 +15,7 @@ require 'active_record'
 require 'logger'
 require 'httparty'
 require 'json'
-
+require 'rspec'
 
 require 'sinatra'
 require "sinatra/reloader" if development?
