@@ -6,7 +6,7 @@ NOTE: You can not order a ride home from the app. I set up a mock scenario on wh
 
 Link to app:
 
-bacestimator.herokuapp.com
+https://bacestimator.herokuapp.com
 
 ## Technical Stack
 ------------------
@@ -78,7 +78,4 @@ User will have a gender
 
 User can log in and log out  x
 
-https://github.com/hannah/drinkdex/blob/master/lib/person_class.rb
-
-https://github.com/andrem8/Blood-Alcohol-App/blob/master/app.rb
  -->
