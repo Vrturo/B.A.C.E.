@@ -1,4 +1,3 @@
-  require 'debugger'
   require 'JSON'
 get '/uberoauth' do
 
