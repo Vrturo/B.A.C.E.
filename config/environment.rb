@@ -23,7 +23,6 @@ require 'dotenv'
 Dotenv.load
 require 'sinatra/flash'
 require 'uber'
-require 'debugger'
 require 'erb'
 require 'bcrypt'
 require 'faker'
