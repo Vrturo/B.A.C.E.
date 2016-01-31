@@ -7,7 +7,7 @@ get '/uberoauth' do
         client_id: ENV['UBER_CLIENT_ID'],
         code: params[:code],
         grant_type: "authorization_code",
-        redirect_uri: "http://localhost:9393/uberoauth"
+        redirect_uri: "https://bacestimator.herokuapp.com/uberoauth"
       }
     }
   )
