@@ -21,20 +21,20 @@ get '/uberoauth' do
                   headers: HEADER,
                   data:{scope: "profile"})
 
-  p @user = User.find_or_create_by(email: @profile["email"],
+    @user = User.find_or_create_by(email: @profile["email"],
     first_name: @profile["first_name"],
     last_name: @profile["last_name"],
     password_hash:  @profile["uuid"],
     token: @profile["uuid"])
 
   if @user.save || @user
-    p @access_token
+    @access_token
     session[:access_token] = @access_token
     session[:user_id] = @user.id
-    p session
+    session
     redirect '/'
   else
-    p @errors = @user.errors.messages
+    @errors = @user.errors.messages
     erb :"users/index"
   end
 end
